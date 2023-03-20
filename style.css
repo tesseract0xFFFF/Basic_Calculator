@@ -1,0 +1,23 @@
+
+
+
+.calcBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.buttonArea{
+    display: grid;
+    width: 50%;
+    height: 50%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* calculator display. */
+.buttonArea > .calcDisplay{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: pink;
+}

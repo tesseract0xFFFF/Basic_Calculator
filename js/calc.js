@@ -42,8 +42,18 @@ function operate(operator, num1, num2){
 
     return result;
 }
- 
-let calc = operate ('-', 10, 2);
 
+let calcBody = document.querySelector('.calcBody');
+let buttonArea = document.querySelector('.buttonArea');
+ 
+// generates the button elements and prints numbers on them.
+for (i = 0; i <= 9; i++){
+
+   const calcButton = document.createElement('button');
+   calcButton.setAttribute('class', 'button');
+   calcButton.setAttribute('id', `butt${i}`);
+   calcButton.textContent = `${i}`;
+   buttonArea.appendChild(calcButton);
+}
 
 
