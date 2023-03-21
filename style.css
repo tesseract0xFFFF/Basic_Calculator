@@ -13,6 +13,9 @@
     width: 50%;
     height: 50%;
     grid-template-columns: repeat(3, 1fr);
+    background-color: blueviolet;
+    gap: 5px;
+    padding: 25px;
 }
 
 /* calculator display. */
@@ -20,4 +23,5 @@
     grid-column-start: 1;
     grid-column-end: 4;
     background-color: pink;
+    height: 50px;
 }
