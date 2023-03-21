@@ -45,15 +45,25 @@ function operate(operator, num1, num2){
 
 let calcBody = document.querySelector('.calcBody');
 let buttonArea = document.querySelector('.buttonArea');
+let calcDisplay = document.querySelector('.calcDisplay');
+
+
+
  
 // generates the button elements and prints numbers on them.
+// event listeners were attached to number buttons. clicking them prints the numbers onto the display element.
 for (i = 0; i <= 9; i++){
 
    const calcButton = document.createElement('button');
    calcButton.setAttribute('class', 'button');
-   calcButton.setAttribute('id', `butt${i}`);
+   calcButton.setAttribute('id', `${i}`);
    calcButton.textContent = `${i}`;
+   calcButton.addEventListener('click', () => {calcDisplay.textContent += calcButton.textContent
+   
+
+});
    buttonArea.appendChild(calcButton);
 }
+
 
 
