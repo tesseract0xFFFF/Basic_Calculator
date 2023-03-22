@@ -44,7 +44,7 @@ function operate(operator, num1, num2){
 }
 
 function areThereTwoArguments(e){
-// stores the operator.
+
     operatorCount++;
     // function will always be called exactly once for a pair of numbers. 
     // this way, the array index won't be incremented without evaluation.
@@ -117,7 +117,6 @@ for (i = 0; i <= 9; i++){
 }
 
 // attach event listeners to operator buttons.
-
 let buttAdd = document.querySelector('#buttAdd');
 let buttSubtract = document.querySelector('#buttSubtract');
 let ButtMultiply = document.querySelector('#ButtMultiply');
