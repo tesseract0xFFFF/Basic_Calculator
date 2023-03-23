@@ -77,6 +77,23 @@ function areThereTwoArguments(e){
     }
 } 
 
+function clearAll(){
+
+     numbers = [''];
+     arrIndex = 0;
+     currentOperator = '';
+     operatorCount = 0;
+     calcDisplay.textContent = '';
+}
+
+// delets the last number (numbers are stored as strings until calculation time).
+function delChar(){
+
+    numbers[arrIndex] = numbers[arrIndex].slice(0, -1);
+    calcDisplay.textContent = numbers[arrIndex];
+    
+}
+
 
 let calcBody = document.querySelector('.calcBody');
 let buttonArea = document.querySelector('.buttonArea');
@@ -116,12 +133,14 @@ for (i = 0; i <= 9; i++){
    buttonArea.appendChild(calcButton);
 }
 
-// attach event listeners to operator buttons.
+// store operator buttons.
 let buttAdd = document.querySelector('#buttAdd');
 let buttSubtract = document.querySelector('#buttSubtract');
 let ButtMultiply = document.querySelector('#ButtMultiply');
 let ButtDivide = document.querySelector('#ButtDivide');
 let ButtEqual = document.querySelector('#ButtEqual');
+let ButtAC = document.querySelector('#ButtAC');
+let ButtDel = document.querySelector('#ButtDel');
 
 // attach event listeners to said operator buttons.
 buttAdd.addEventListener('click', areThereTwoArguments);
@@ -129,4 +148,6 @@ buttSubtract.addEventListener('click', areThereTwoArguments);
 ButtMultiply.addEventListener('click', areThereTwoArguments);
 ButtDivide.addEventListener('click', areThereTwoArguments);
 ButtEqual.addEventListener('click', areThereTwoArguments);
+ButtAC.addEventListener('click', clearAll);
+ButtDel.addEventListener('click', delChar);
 
