@@ -46,6 +46,7 @@ function operate(operator, num1, num2){
 function areThereTwoArguments(e){
 
     operatorCount++;
+    decimalPointCounter = 0;
     // function will always be called exactly once for a pair of numbers. 
     // this way, the array index won't be incremented without evaluation.
     if(operatorCount > 1){
@@ -105,6 +106,7 @@ let numbers = [''];
 let arrIndex = 0;
 let currentOperator = '';
 let operatorCount = 0;
+let decimalPointCounter = 0;
 
 
 
@@ -153,6 +155,10 @@ ButtAC.addEventListener('click', clearAll);
 ButtDel.addEventListener('click', delChar);
 // decimal point button.
 ButtDecimal.addEventListener('click', () => {
+    decimalPointCounter ++;
+    if(decimalPointCounter > 1){
+        return;
+    }
     calcDisplay.textContent += ButtDecimal.textContent;
     numbers[arrIndex] += ButtDecimal.textContent;
 })
