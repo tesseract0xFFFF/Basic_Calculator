@@ -141,7 +141,7 @@ let ButtDivide = document.querySelector('#ButtDivide');
 let ButtEqual = document.querySelector('#ButtEqual');
 let ButtAC = document.querySelector('#ButtAC');
 let ButtDel = document.querySelector('#ButtDel');
-
+let ButtDecimal = document.querySelector('#ButtDecimal');
 // attach event listeners to said operator buttons.
 buttAdd.addEventListener('click', areThereTwoArguments);
 buttSubtract.addEventListener('click', areThereTwoArguments);
@@ -150,4 +150,9 @@ ButtDivide.addEventListener('click', areThereTwoArguments);
 ButtEqual.addEventListener('click', areThereTwoArguments);
 ButtAC.addEventListener('click', clearAll);
 ButtDel.addEventListener('click', delChar);
+// decimal point button.
+ButtDecimal.addEventListener('click', () => {
+    calcDisplay.textContent += ButtDecimal.textContent;
+    numbers[arrIndex] += ButtDecimal.textContent;
+})
 
