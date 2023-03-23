@@ -37,6 +37,16 @@ function operate(operator, num1, num2){
         case '*':
             result = multiply(num1, num2);
             break;
+        
+        case '=':
+            if (numbers[0] === numbers[1]){
+
+                result = num[0];
+            }
+            else {
+                
+                result = 'Error';
+            }
             
     }
 
@@ -69,7 +79,18 @@ function areThereTwoArguments(e){
     else {
         // when 2 numbers are provided - carry the operation on them,
         //  store result in the 1st array element and zero the index. then print result onto screen.
+        if (numbers[arrIndex] === '0'){
+            arrIndex = 0;
+            numbers[arrIndex] = '';
+            operatorCount = 0;
+            currentOperator = '';
+            calcDisplay.textContent = 'Not today, son.'  
+            return; 
+        }
         numbers[0] = operate(currentOperator, +numbers[0], +numbers[1]); //note: final result is stored as a number type and not a string! 
+        if(numbers[0] === 'Error'){
+            clearAll();
+        }
         // so slice in delChar() won't work on it.
         numbers[1] = 0;
         arrIndex = 0;
@@ -123,6 +144,12 @@ for (i = 0; i <= 9; i++){
 
     // if there is already an operator displayed, don't concatenate the next number typed in - 
     // rather, overwrite the operator on display with the second number.
+    if (calcDisplay.textContent === 'Not today, son.'){
+
+        calcDisplay.textContent = calcButton.textContent;
+        numbers[arrIndex] += calcButton.textContent;
+        return;
+    }
     if (operatorCount > 0){
         operatorCount = 0;
         calcDisplay.textContent = calcButton.textContent;
