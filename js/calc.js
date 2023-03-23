@@ -68,12 +68,13 @@ function areThereTwoArguments(e){
     else {
         // when 2 numbers are provided - carry the operation on them,
         //  store result in the 1st array element and zero the index. then print result onto screen.
-        numbers[0] = operate(currentOperator, +numbers[0], +numbers[1]);
+        numbers[0] = operate(currentOperator, +numbers[0], +numbers[1]); //note: final result is stored as a number type and not a string! 
+        // so slice in delChar() won't work on it.
         numbers[1] = 0;
         arrIndex = 0;
         operatorCount = 0;
         currentOperator = '';
-        calcDisplay.textContent = numbers[0];
+        calcDisplay.textContent = numbers[0]; 
     }
 } 
 
